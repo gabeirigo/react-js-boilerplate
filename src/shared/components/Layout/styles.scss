@@ -1,0 +1,11 @@
+@import '@shared/styles/variables';
+
+.layout {
+  &__outlet {
+    height: 100vh;
+  }
+  
+  &__content {
+    padding: 32px;
+  }
+}

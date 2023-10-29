@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .verification-code {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="verification-code" id="verification-code">
+        Este é o seu código de verificação. Cole este código na página de verificação.
+    </div>
+
+    <script>
+        // Função para obter o parâmetro "code" da URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Verifica se o parâmetro "code" está presente na URL
+        const codeParam = getQueryParam('code');
+
+        if (codeParam) {
+            const verificationCodeElement = document.getElementById('verification-code');
+            verificationCodeElement.textContent = `Este é o seu código de verificação: ${codeParam}. Cole este código na página de verificação.`;
+        }
+    </script>
+</body>
+</html>
